@@ -1,0 +1,34 @@
+    <div class="container">
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">Items</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                <tr>
+                    <td><img style="width: 70px;height:70px" src="/product-images/{{this.product._id}}.jpg" alt=""></td>
+                    <td>{{this.product.name}}</td>
+                    <td>
+                        <button class="btn btn-primary"
+                            onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)">-</button>
+                        <span id="{{this.product._id}}">{{this.quantity}}</span>
+                        <button class="btn btn-primary mr-3 mr-3"
+                            onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)">+</button>
+                    </td>
+                    <td>
+                        <a href="" class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <hr>
+        <h3 class="float-right mr-5 mt-4"> <span class="" id="total" >Total RS: {{total}}</span> </h3>
+        <a href="/place-order" class="btn btn-success float-right mr-5 mt-4">Place Order</a>
+
+    </div>
+ 

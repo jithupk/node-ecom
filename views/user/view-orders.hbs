@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Pincode</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Total Price</th>
+                        <th scope="col">Payment Method</th>
+                        <th scope="col">Status</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each orders}}
+                    <tr>
+                        <td>{{@index}}</td>
+                        <td>{{this.date}}</td>
+                        <td>{{this.deliveryDeatils.address}}</td>
+                        <td>{{this.deliveryDeatils.pincode}}</td>
+                        <td>{{this.deliveryDeatils.mobile}}</td>
+                        <td>{{this.total}}</td>
+                        <td>{{this.payamentMethod}}</td>
+                        <td>{{this.status}}</td>
+                        <td>
+                            <a href="/view-order-products/{{this._id}}" class="btn btn-primary">View Products</a>
+                        </td>
+                        {{/each}}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
